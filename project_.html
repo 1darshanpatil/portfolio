@@ -4,17 +4,45 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="assets/css/fullPortfolio.css" />
+  <style>
+    /* Style the table header */
+th {
+  cursor: pointer;
+}
+
+/* Style the ascending and descending arrows */
+th.sort-asc::after,
+th.sort-desc::after {
+  content: "";
+  float: right;
+  margin-top: 5px;
+  border-width: 0 4px 4px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+th.sort-asc::after {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+th.sort-desc::after {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+  </style>
 </head>
   <body>
     Blame the Python script for any displeasure with the table in this HTML file - it was created by <a href="https://linkode.org/#sDJhxrMAzMpMnEpoLhMh63">automateTable.py!</a>
     <table>
       <thead>
         <tr>
-          <th>Repository</th>
-          <th>Description</th>
-          <th>Last Updated</th>
+          <th onclick="sortTable(0)">Repository</th>
+          <th onclick="sortTable(1)">Description</th>
+          <th onclick="sortTable(2)">Last Updated</th>
         </tr>
-      </thead>
+      </thead>      
       <tbody>
         <tr>
           <td><a href="https://github.com/1darshanpatil/portfolio">portfolio</a></td>
@@ -167,6 +195,45 @@
           <td>private</td>
         </tr>
       </tbody>
-    </table>  
+    </table>
+    <script>
+      function sortTable(n) {
+        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+        table = document.getElementsByTagName("table")[0];
+        switching = true;
+        dir = "asc";
+        while (switching) {
+          switching = false;
+          rows = table.getElementsByTagName("tr");
+          for (i = 1; i < (rows.length - 1); i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("td")[n];
+            y = rows[i + 1].getElementsByTagName("td")[n];
+            if (dir == "asc") {
+              if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                shouldSwitch= true;
+                break;
+              }
+            } else if (dir == "desc") {
+              if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                shouldSwitch= true;
+                break;
+              }
+            }
+          }
+          if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchcount ++;
+          } else {
+            if (switchcount == 0 && dir == "asc") {
+              dir = "desc";
+              switching = true;
+            }
+          }
+        }
+      }
+    </script>
+      
 </body>
 </html>
