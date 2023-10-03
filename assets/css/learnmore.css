@@ -1,118 +1,38 @@
-/* Set default styles for the page */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    background-color: #f8f8f8;
-  }
-  
-  /* Style the header section */
-  header {
-    background-color: #333;
-    color: white;
-    padding: 40px;
-    text-align: center;
-  }
-  
-  /* Style the h1 element in the header */
-  header h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
-  
-  /* Style the h2 element in the header */
-  header h2 {
-    font-size: 36px;
-    font-weight: normal;
-    margin-bottom: 40px;
-  }
-  
-  /* Style the section headings */
-  section h3 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* Style the list items */
-  li {
-    margin-bottom: 10px;
-  }
-  
-  /* Style the skills section */
-  section:last-of-type {
-    background-color: white;
-    padding: 40px;
-  }
-  
-  /* Style the skills list items */
-  ul:last-of-type li {
-    margin-bottom: 0;
-  }
-  
-  /* Style the link elements */
-  a {
-    color: #337ab7;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Media queries for responsive design */
-  @media screen and (max-width: 768px) {
-    /* Decrease font sizes for smaller screens */
-    header h1 {
-      font-size: 36px;
-    }
-    header h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    section h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-    
-    /* Reduce padding in header */
-    header {
-      padding: 20px;
-    }
-    
-    /* Reduce padding in sections */
-    section {
-      padding: 20px;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    /* Decrease font sizes for smaller screens */
-    header h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-    header h2 {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
-    section h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-    
-    /* Reduce padding in header */
-    header {
-      padding: 20px;
-    }
-    
-    /* Reduce padding in sections */
-    section {
-      padding: 20px;
-    }
-  }
-  
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 40px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+h1 {
+  color: white;
+}
+h2, h3 {
+  color: #2c3e50;
+}
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+header {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+section {
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
