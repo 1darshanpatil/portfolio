@@ -71,3 +71,30 @@ a {
 a:hover {
   color: var(--primary-color);
 }
+
+
+
+
+
+
+.tooltip {
+  display: inline;
+  position: relative;
+  cursor: pointer;
+  color: var(--primary-color);
+  font-family: var(--font-accent);
+}
+
+.tooltip:hover:after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 1.5em;
+  left: 0;
+  background: var(--primary-color);
+  color: var(--tertiary-color);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  font-size: 0.9em;
+}

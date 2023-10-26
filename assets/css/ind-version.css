@@ -1,0 +1,56 @@
+.custom-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.custom-list a,
+.custom-list strong {
+    margin: 0 5px;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.custom-list a:hover {
+    color: #007BFF;
+    /* Adjust this color based on your design */
+}
+
+.custom-list .description {
+    font-style: italic;
+    margin-left: 5px;
+}
+
+.custom-list .divider {
+    margin: 0 5px;
+}
+
+
+ul.actions {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove any default margin */
+}
+
+ul.actions li {
+    width: 33.33%;
+    text-align: center;
+    padding: 5px; /* Adjust this value to change the space between buttons */
+    margin: 0; /* Remove any default margin */
+}
+
+.button {
+    display: flex;          /* Turns the button into a flex container */
+    align-items: center;    /* Centers content vertically */
+    justify-content: center;/* Centers content horizontally */
+    text-align: center;     /* Ensures text is centered if flex properties don't apply */
+    padding: 10px 15px;     /* Adjust this value to your preference */
+    margin: 0; 
+    width: 100%;            /* Ensures the button takes full width of its container */
+}
+
