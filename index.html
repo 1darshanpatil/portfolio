@@ -12,6 +12,26 @@
 
 <body class="is-preload">
 
+
+	<!-- Adding Welcome Window -->
+	<div id="welcomeOverlay" class="overlay" onclick="closeOverlay()">
+		<div class="overlay-content" onclick="event.stopPropagation();">
+			<h2 id="timeGreeting">Welcome!</h2>
+			<p>Thank you for visiting. You'll find projects here that I developed for personal needs. While I value
+				transparency, privacy is paramount. Some current engagements and projects remain confidential for
+				both personal and proprietary reasons. However, feel free to connect with me for deeper insights.</p>
+			<button onclick="closeOverlay()">Explore</button>
+		</div>
+	</div>
+
+
+
+
+	<!-- Welcome window END! -->
+
+
+
+
 	<!-- Header -->
 	<header id="header">
 		<div class="inner">
@@ -33,9 +53,10 @@
 				To a lesser or greater extent, I have been deeply influenced by mathematicians, physicists, and
 				economists. My pursuits largely revolve around mathematics, finance, software development, and trading.
 				None of these areas can be fully explored without data analysis, which forms a continuous loop in my
-				exploration. 
-				For reasons related to quant and latency, I gravitate towards low-level programming languages like C and 
-				C++. However, no project of mine is complete without a touch of Python. Not only is Python my area of expertise
+				exploration.
+				For reasons related to quant and latency, I gravitate towards low-level programming languages like C and
+				C++. However, no project of mine is complete without a touch of Python. Not only is Python my area of
+				expertise
 				and a language I deeply love, but it's also worth noting that Python itself is written in C.
 				<br>
 				I wouldn't label myself as self-taught. It's simply that my prime hobby involves sitting in front of a
@@ -45,7 +66,7 @@
 				human psychology, spirituality, and to some extent, human anatomy.
 
 
-				
+
 
 
 			<div class="actions-grid">
@@ -73,7 +94,7 @@
 
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/fulls/10.png" class="image fit thumb"><img src="images/thumbs/10-.png" alt="" /></a>
-					<h3>Terminal-Pomodor</h3>
+					<h3>Terminal-Pomodoro</h3>
 					<p>An Open-Source Pomodoro CLI with intuitive progress bars and alerts, enhancing productivity.
 						Built as a Debian package, it's an evolution of `termoto` and is GNU Licensed for GNU/Linux
 						systems.</p>
@@ -111,7 +132,9 @@
 				<article class="col-6 col-12-xsmall work-item">
 					<a href="images/fulls/02.png" class="image fit thumb"><img src="images/thumbs/02.png" alt="" /></a>
 					<h3>Extracting Pay-slip Data</h3>
-					<p>I crafted a Python script using PyPDF2 to extract data from payslip PDFs. It scans a directory, pulling details like net pay, allowances, taxes, and bonuses. This tool efficiently processes a wide range of salary components.
+					<p>I crafted a Python script using PyPDF2 to extract data from payslip PDFs. It scans a directory,
+						pulling details like net pay, allowances, taxes, and bonuses. This tool efficiently processes a
+						wide range of salary components.
 					</p>
 				</article>
 				<article class="col-6 col-12-xsmall work-item">
@@ -252,9 +275,45 @@
 		<script src="assets/js/messagemeinstead.js"></script>
 		<script src="assets/js/mobilenumber.js"></script>
 
+		<!-- Welcome window script -->
+
+		<script>
+			function closeOverlay() {
+				document.getElementById('welcomeOverlay').style.display = 'none';
+			}
+
+			document.getElementById('welcomeOverlay').addEventListener('click', function () {
+				this.style.display = 'none';
+			});
+
+			// On page load, update the greeting
+			window.onload = function () {
+				updateTimeGreeting();
+			};
+
+			function updateTimeGreeting() {
+				const currentHour = new Date().getHours();
+				const greetingElement = document.getElementById('timeGreeting');
+
+				if (currentHour >= 4 && currentHour < 12) {
+					greetingElement.innerText = "Good Morning!";
+				} else if (currentHour >= 12 && currentHour < 18) {
+					greetingElement.innerText = "Good Afternoon!";
+				} else if (currentHour >= 18 && currentHour < 22) {
+					greetingElement.innerText = "Good Evening!";
+				} else {
+					greetingElement.innerText = "Welcome!";
+				}
+			}
 
 
-		<!--
+		</script>
+
+		<!-- welcome window script END! -->
+
+
+<!--
+
 	<form method="post" action="mailto:hello@example.com?subject=Contact Form Submission" enctype="text/plain">
 	<div class="row gtr-uniform gtr-50">
 		<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
